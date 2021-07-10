@@ -349,7 +349,7 @@ void SafetyChecker_update(SafetyChecker *me, MotorController *mcm, BatteryManage
     // 40922 = 60227 <-- This discrepancy is because we don't get all of the requested torque 
 
 
-    me->softBSPD_bpsHigh = bps->bps0->sensorValue > 2.5;
+    me->softBSPD_bpsHigh = bps->bps0->sensorValue > 2500;
     me->softBSPD_kwHigh = MCM_getPower(mcm) > 4000;
 
     // Note: this is using the FUTURE torque request with the PREVIOUS RPM
