@@ -358,14 +358,14 @@ void SafetyChecker_update(SafetyChecker *me, MotorController *mcm, BatteryManage
         IO_RTC_StartTime(&timestamp_SoftBSPD);
         me->softBSPD_fault = TRUE;
         me->faults |= F_softBSPDFault;
-        Light_set(Light_dashEco, 1);  // For testing only
+        // Light_set(Light_dashEco, 1);  // For testing only
     }
     else if (IO_RTC_GetTimeUS(timestamp_SoftBSPD) >= 500000 || IO_RTC_GetTimeUS(timestamp_SoftBSPD) == 0)
     {
         timestamp_SoftBSPD = 0;
         me->softBSPD_fault = FALSE;
         me->faults &= ~F_softBSPDFault;
-        Light_set(Light_dashEco, 0);  // For testing only
+        // Light_set(Light_dashEco, 0);  // For testing only
     }
 
 
